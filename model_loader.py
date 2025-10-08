@@ -3,7 +3,7 @@ import torch.nn as nn
 import torchvision.transforms as transforms
 from PIL import Image
 import torchvision.models as models
-
+import os
 # ----------------------------
 # 1️⃣ ResNet Class
 # ----------------------------
@@ -104,4 +104,5 @@ def predict_image(model, device, image, class_names=["Normal", "Pneumonia"]):
     pred_class = class_names[pred_idx]
 
     return pred_class, confidence
+
 
