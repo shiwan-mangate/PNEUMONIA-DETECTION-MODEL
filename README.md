@@ -5,20 +5,6 @@ The project provides a complete training pipeline, model tuning framework, and a
 
 ---
 
-##  Table of Contents
-- [Features](#features)
-- [Dataset](#dataset)
-- [Data Preprocessing & Augmentation](#data-preprocessing--augmentation)
-- [Model Architecture](#model-architecture)
-- [Training & Hyperparameter Tuning](#training--hyperparameter-tuning)
-- [Performance](#performance)
-- [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [Future Work](#future-work)
-- [References](#references)
-
----
-
 ##  Features
 - Detects pneumonia vs. normal cases from X-ray images  
 - Supports multiple model architectures:
