@@ -58,12 +58,15 @@ class ResNetClassifier(nn.Module):
 # 2️⃣ Load trained model
 # ----------------------------
 @torch.no_grad()
-def load_model(model_path =r"D:\Machine learning\deep learning\pneumonia app\best_pneumonia_resnet2.pth" , device=None):
+def load_model(model_path="best_pneumonia_resnet2.pth", device=None):
     """
-    Load trained ResNet model.
+    Load trained ResNet model from the local repository path.
     """
     if device is None:
         device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    # Get correct relative path (works on both local & Streamlit)
+    model_path = os.path.join(os.path.dirname(__file__), model_path)
 
     model = ResNetClassifier(
         num_classes=2,
@@ -72,11 +75,12 @@ def load_model(model_path =r"D:\Machine learning\deep learning\pneumonia app\bes
         trainable_layers=2,
         input_channels=1
     )
+
+    # Load weights
     model.load_state_dict(torch.load(model_path, map_location=device))
     model.to(device)
     model.eval()
     return model, device
-
 # ----------------------------
 # 3️⃣ Predict function
 # ----------------------------
@@ -100,3 +104,4 @@ def predict_image(model, device, image, class_names=["Normal", "Pneumonia"]):
     pred_class = class_names[pred_idx]
 
     return pred_class, confidence
+
