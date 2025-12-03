@@ -75,7 +75,11 @@ The project provides a complete training pipeline, model tuning framework, and a
  **Best accuracy achieved:** 94% using **ResNet**
 
 ---
+## Live Demo
 
+Try the deployed web app here:  
+**Streamlit App:** https://pneumonia-detection-model-vaixegcwrx7v6isguno2y5.streamlit.app/
+---
 ## Future Work
 Integration of Grad-CAM for visual explainability
 
@@ -85,4 +89,6 @@ Deploying the model as a cloud inference service (API-based)
 
 Model ensembling for improved robustness
 Kaggle Pneumonia Dataset
+
+
 
